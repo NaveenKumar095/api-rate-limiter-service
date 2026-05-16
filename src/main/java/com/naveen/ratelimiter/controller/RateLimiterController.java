@@ -23,6 +23,11 @@ public class RateLimiterController {
         this.rateLimiterService = rateLimiterService;
     }
 
+    @GetMapping("/")
+    public String home() {
+        return "API Rate Limiter Service Running";
+    }
+
     @GetMapping("/check")
     public ResponseEntity<RateLimitResponse> checkRateLimit(
             @RequestParam String userId
